@@ -3,9 +3,16 @@ Example project running selenium with docker.
 
 ## Setup
 
-Run `bundle install` and `docker-compose up -d` to initialize the containers.
+Run `docker-compose up -d` to initialize the containers.
 
-To Run the tests, type `bundle exec rspec grid.rb`.
+To Run the tests: 
+
+```bash
+    docker-compose exec ruby bash
+    bundle install && bundle exec rspec grid.rb
+```
+
+Run `docker-compose down` to remove the containers.
 
 ### VNC
 
