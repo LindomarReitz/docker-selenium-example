@@ -5,7 +5,7 @@ Example project running selenium with docker.
 
 Run `docker-compose up -d` to initialize the containers.
 
-To Run the tests: 
+To run the tests: 
 
 ```bash
     docker-compose exec ruby bash
