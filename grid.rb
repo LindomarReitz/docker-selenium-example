@@ -6,7 +6,7 @@ RSpec.describe "Selenium Grid Test" do
   before do
     @driver = Selenium::WebDriver.for(
     :remote,
-    url: 'http://localhost:4444/wd/hub',
+    url: 'http://seleniumhub:4444/wd/hub',
     desired_capabilities: :chrome)
   end
 
