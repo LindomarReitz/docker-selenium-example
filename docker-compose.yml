@@ -1,18 +1,36 @@
-seleniumhub:
-  image: selenium/hub
-  ports:
-    - 4444:4444
+version: '3'
 
-firefoxnode:
-  image: selenium/node-firefox-debug
-  ports:
-    - 5900
-  links:
-    - seleniumhub:hub
+services:
+  seleniumhub:
+    image: selenium/hub
+    ports:
+      - 4444:4444
 
-chromenode:
-  image: selenium/node-chrome-debug
-  ports:
-    - 5900
-  links:
-    - seleniumhub:hub
+  ruby:
+    image: ruby:2.6
+    volumes:
+      - .:/src
+    working_dir: /src
+    depends_on: 
+      - seleniumhub
+    command: tail -f /dev/null
+
+  firefoxnode:
+    image: selenium/node-firefox-debug
+    ports:
+      - 5900
+    depends_on:
+      - seleniumhub 
+    environment: 
+      - HUB_HOST=seleniumhub
+      - HUB_PORT=4444
+
+  chromenode:
+    image: selenium/node-chrome-debug
+    ports:
+      - 5900
+    depends_on:
+      - seleniumhub
+    environment: 
+      - HUB_HOST=seleniumhub
+      - HUB_PORT=4444
