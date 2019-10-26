@@ -19,7 +19,7 @@ RSpec.describe "Selenium Grid Test" do
     expect(@driver.title).to eq('The Internet')
   end
 
-  it "recoves the password" do
+  it "recovers the password" do
     @driver.get 'http://the-internet.herokuapp.com/forgot_password'
     @driver.find_element(:id, "email").send_keys "lindomar@teste.com"
     @driver.find_element(:id, "form_submit").click
