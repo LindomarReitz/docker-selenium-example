@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/ab9d587b730c12e0360e/maintainability)](https://codeclimate.com/github/LindomarReitz/docker-selenium-example/maintainability)
+
 # docker-selenium-example
 Example project running selenium with docker.
 
