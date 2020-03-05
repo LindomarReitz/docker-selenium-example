@@ -18,7 +18,7 @@ services:
   firefoxnode:
     image: selenium/node-firefox-debug
     ports:
-      - 5900
+      - 5901:5900
     depends_on:
       - seleniumhub 
     environment: 
@@ -28,7 +28,7 @@ services:
   chromenode:
     image: selenium/node-chrome-debug
     ports:
-      - 5900
+      - 5902:5900
     depends_on:
       - seleniumhub
     environment: 
