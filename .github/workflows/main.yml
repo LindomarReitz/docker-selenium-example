@@ -1,0 +1,10 @@
+name: Main workflow
+on: push
+jobs:
+  build:
+    name: Ruby action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - run: docker-compose up -d
+    - run: docker-compose run -T ruby bash -c "bundle install && bundle exec rspec grid.rb"
